@@ -38,7 +38,11 @@ public class ShopApp {
 
 			System.out.println("Current Cart : " + myCart.toString());
 
-		}
-		input.close();
+			System.out.println("Would you like to keep shopping? (y/n)");
+			
+				if(input.nextLine().equals("n")) {  //need to add something to allow y to go to the top of the loop again
+					input.close();
+				}
 	}
+}
 }
