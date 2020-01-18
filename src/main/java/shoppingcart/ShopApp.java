@@ -17,13 +17,8 @@ public class ShopApp {
 		Cart myCart = new Cart();
 
 		
-		Item myItem = new Item("shoes", 50 , 3);
-		
-		Item myItem2 = new Item("socks", 12.50, 4);
-		
-
-		myCart.addItem(myItem);
-		myCart.addItem(myItem2);
+		myCart.addItem(new Item("shoes", 50 , 3));
+		myCart.addItem(new Item("socks", 12.50, 4));
 		myCart.addItem(new Item("pants", 30, 1));
 				
 		
