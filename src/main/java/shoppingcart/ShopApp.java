@@ -1,8 +1,6 @@
 package shoppingcart;
 
-import java.util.ArrayList;
 import java.util.Scanner;
-
 
 public class ShopApp {
 
@@ -12,43 +10,35 @@ public class ShopApp {
 
 	// Store the items in an ArrayList and update the total due at checkout.
 
+	private static Object myCart;
+
 	public static void main(String[] args) {
 
-		Cart myCart = new Cart();
+		System.out.println("Your Cart:");
 
-		
-		myCart.addItem(new Item("shoes", 50 , 3));
-		myCart.addItem(new Item("socks", 12.50, 4));
-		myCart.addItem(new Item("pants", 30, 1));
-				
-		
-		System.out.println(myCart.toString());
-		
-		
-		
-		// LOOP
-//
-//		while (true) {
-//
-//			System.out.println("What would you like to buy?");
-//			// show items for sale?
-//
-//			String itemToBuy = input.nextLine();
-//
-//			System.out.println("Enter price per item: ");
-//
-//			double itemPrice = input.nextInt();
-//
-//			System.out.println("Enter quantity: ");
-//
-//			int itemQuantity = input.nextInt();
-//
-//			int totalPrice = (itemPrice * itemQuantity);
-//
-//			System.out.println("\n" + "Your current cart: ");
-//			System.out.println(myCart.toString());
-//		}
+		while (true) {
+			Scanner input = new Scanner(System.in);
 
+			System.out.println("What would you like to buy?");
+			String userItem = input.nextLine();
+
+			System.out.println("What is the price?");
+			double userPrice = input.nextDouble();
+
+			System.out.println("How many?");
+			int userQuantity = input.nextInt();
+
+			Cart myCart = new Cart();
+
+			myCart.addItem(new Item(userItem, userPrice, userQuantity));
+
+//			myCart.addItem(new Item("shoes", 50, 3));
+//			myCart.addItem(new Item("socks", 12.50, 4));
+//			myCart.addItem(new Item("pants", 30, 1));
+
+			System.out.println("Current Cart : " + myCart.toString());
+
+		}
+		input.close();
 	}
-
 }
